@@ -1,0 +1,12 @@
+---
+# tasks file for dnsclient
+- name: Verify that the dnsserver_ip variable is defined
+  assert:
+    that: dnsserver_ip is defined
+    msg: "Variable 'dnsserver_ip' should be defined"
+
+- name: Add DNS server
+  template:
+    src: 'resolved.conf.j2'
+    dest: /etc/systemd/resolved.conf
+  notify: restart resolver

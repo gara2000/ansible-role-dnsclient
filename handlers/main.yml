@@ -1,0 +1,6 @@
+---
+# handlers file for dnsclient
+- name: restart resolver
+  service:
+    name: systemd-resolved
+    state: restarted
