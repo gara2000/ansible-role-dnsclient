@@ -23,13 +23,14 @@ No dependencies
 
 Example Playbook
 ----------------
-
+```bash
 - hosts: servers
   vars:
     domain: "my_domain.net"
     dnsserver_ip: "192.168.60.4"
   roles:
       - gara2000.dnsclient 
+```
 
 License
 -------
